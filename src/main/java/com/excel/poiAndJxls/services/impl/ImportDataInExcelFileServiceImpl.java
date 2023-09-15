@@ -66,7 +66,7 @@ public class ImportDataInExcelFileServiceImpl implements ImportDataInExcelFileSe
             // Read data from Excel file
             List<Server> servers = new ArrayList<>();
             int lastRowNum = sheet.getLastRowNum();
-            for (int i = 2; i <= lastRowNum; i++) {
+            for (int i = 2; i <= lastRowNum; i++) { // for i = 2 becase data start from row 3 -> index = 2
                 Row row = sheet.getRow(i);
                 Server server = convertRowToServer(row);
                 if(server != null)  servers.add(server);
