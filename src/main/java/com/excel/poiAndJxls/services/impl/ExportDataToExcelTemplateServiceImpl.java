@@ -1,6 +1,7 @@
 package com.excel.poiAndJxls.services.impl;
 
 import com.excel.poiAndJxls.dtos.Server;
+import com.excel.poiAndJxls.exception.NotFoundException;
 import com.excel.poiAndJxls.services.ExportDataToExcelTemplateService;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
@@ -28,9 +29,11 @@ public class ExportDataToExcelTemplateServiceImpl implements ExportDataToExcelTe
             Context context = new Context();
             context.toMap().putAll(servers);
             JxlsHelper.getInstance().processTemplate(inputStream, outputStream, context);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch(NullPointerException e) {
+            throw new NotFoundException("Template not found in resources/templates_exports");
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
     }
