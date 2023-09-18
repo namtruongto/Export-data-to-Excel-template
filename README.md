@@ -1,4 +1,4 @@
-## Things I use 🎰
+## Technologies 🎰
 1. Java 17
 2. maven
 3. Apache poi 5.2.3
@@ -31,7 +31,7 @@
   <version>2.13.0</version>
 </dependency>
 ```
-## Functions ⭐⭐⭐⭐⭐
+## Features  ⭐⭐⭐⭐⭐
 1. Download template Excel( file in resource)
 2. Export data from object to excel template by Jxls
 -> Doc: https://jxls.sourceforge.net/reference/if_command.html
